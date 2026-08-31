@@ -977,3 +977,218 @@ body[data-page="index.html"] .home-hero .hero-slides .hero-media:nth-child(3){ob
   body[data-page="index.html"] .stats .stat strong{font-size:.72rem}
   body[data-page="index.html"] .stats .stat span{margin-top:5px;font-size:.63rem}
 }
+
+/* Logo officiel MCTB BAT extrait du document source */
+.site-header .brand{
+  padding:7px 10px;
+  border:1px solid rgba(255,255,255,.72);
+  border-radius:18px;
+  background:rgba(255,255,255,.98);
+  box-shadow:0 8px 22px rgba(0,0,0,.12);
+}
+.site-header .brand-logo{
+  filter:none;
+  mix-blend-mode:normal;
+}
+.site-footer .brand-logo{
+  filter:none;
+  mix-blend-mode:normal;
+}
+
+@media(max-width:680px){
+  .site-header .brand{padding:5px 7px;border-radius:14px}
+  .site-footer .brand{
+    width:min(340px,100%);
+    padding:7px 9px;
+    border:1px solid rgba(255,255,255,.62);
+    border-radius:16px;
+    background:rgba(255,255,255,.94);
+    box-shadow:0 10px 24px rgba(0,0,0,.18);
+  }
+  .site-footer .brand-logo{width:100%}
+}
+
+@media(max-width:360px){
+  .site-header .brand-logo{width:min(138px,calc(100vw - 160px))}
+  .site-header .header-phone{width:40px;flex:0 0 40px;padding:0;font-size:0}
+  .site-header .header-phone i{margin:0;font-size:.9rem}
+}
+
+/* Accueil mobile : header, hero et chiffres cles dans un seul ecran */
+@media(min-width:360px) and (max-width:430px){
+  body[data-page="index.html"]{
+    --mobile-stats-height:clamp(96px,12.5dvh,108px);
+    --mobile-edge-gap:8px;
+  }
+
+  body[data-page="index.html"] .home-first-screen{
+    position:relative;
+    height:100dvh;
+    min-height:100dvh;
+    overflow:hidden;
+    isolation:isolate;
+    background:#07111e;
+  }
+
+  body[data-page="index.html"] .site-header{
+    top:max(6px,env(safe-area-inset-top));
+    right:6px;
+    left:6px;
+    height:62px;
+    border-radius:20px;
+  }
+  body[data-page="index.html"] .site-header .nav-wrap{padding:0 7px;gap:5px}
+  body[data-page="index.html"] .site-header .brand{padding:4px 6px;border-radius:12px}
+  body[data-page="index.html"] .site-header .brand-logo{width:clamp(122px,33vw,136px)}
+  body[data-page="index.html"] .site-header .header-phone{
+    display:inline-flex;
+    width:auto;
+    min-height:36px;
+    padding:6px 8px;
+    flex:0 1 auto;
+    font-size:clamp(.56rem,2.4vw,.62rem);
+  }
+  body[data-page="index.html"] .site-header .header-phone i{margin-right:4px;font-size:.76rem}
+  body[data-page="index.html"] .site-header .nav-toggle{
+    width:36px;
+    height:36px;
+    flex:0 0 36px;
+    font-size:1rem;
+  }
+  body[data-page="index.html"] .site-header .nav-links{top:calc(100% + 6px)}
+
+  body[data-page="index.html"] .home-first-screen .home-hero{
+    height:100%;
+    min-height:0;
+    padding:0;
+    align-items:stretch;
+    overflow:visible;
+  }
+  body[data-page="index.html"] .home-first-screen .home-hero .hero-content{
+    width:calc(100% - 28px);
+    height:100%;
+    padding:
+      calc(env(safe-area-inset-top) + 74px)
+      0
+      calc(env(safe-area-inset-bottom) + var(--mobile-stats-height) + 22px);
+    justify-content:center;
+  }
+  body[data-page="index.html"] .home-first-screen .home-hero h1{
+    max-width:100%;
+    font-size:clamp(2.35rem,10.5vw,2.9rem);
+    line-height:1;
+    letter-spacing:-.045em;
+  }
+  body[data-page="index.html"] .home-first-screen .home-hero p{
+    max-width:100%;
+    margin-top:10px;
+    font-size:clamp(.82rem,3.5vw,.94rem);
+    line-height:1.35;
+  }
+  body[data-page="index.html"] .home-first-screen .home-hero .hero-actions{
+    width:100%;
+    margin-top:14px;
+    gap:8px;
+    flex-wrap:nowrap;
+  }
+  body[data-page="index.html"] .home-first-screen .home-hero .hero-actions .btn{
+    width:auto;
+    min-width:0;
+    min-height:44px;
+    padding:8px 7px;
+    flex:1 1 0;
+    font-size:clamp(.6rem,2.45vw,.66rem);
+    line-height:1.2;
+    text-align:center;
+  }
+
+  body[data-page="index.html"] .home-first-screen .stats,
+  body[data-page="index.html"] .home-first-screen .hero+.stats{
+    position:absolute;
+    z-index:4;
+    right:0;
+    bottom:calc(env(safe-area-inset-bottom) + var(--mobile-edge-gap));
+    left:0;
+    height:var(--mobile-stats-height);
+    margin:0;
+    padding:0;
+  }
+  body[data-page="index.html"] .home-first-screen .stats .stats-grid{
+    width:calc(100% - 16px);
+    height:100%;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    grid-auto-rows:1fr;
+    border-radius:17px;
+  }
+  body[data-page="index.html"] .home-first-screen .stats .stat{
+    min-width:0;
+    min-height:0;
+    height:100%;
+    padding:6px 2px;
+    gap:4px;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    border-top:0;
+    border-left:1px solid var(--line);
+    text-align:center;
+  }
+  body[data-page="index.html"] .home-first-screen .stats .stat:first-child{border-left:0}
+  body[data-page="index.html"] .home-first-screen .stats .stat i{
+    width:auto;
+    flex:0 0 auto;
+    font-size:clamp(1.4rem,6.4vw,1.65rem);
+    line-height:1;
+  }
+  body[data-page="index.html"] .home-first-screen .stats .stat>div{width:100%;min-width:0}
+  body[data-page="index.html"] .home-first-screen .stats .stat strong{
+    margin:0;
+    font-size:clamp(.64rem,2.85vw,.75rem);
+    line-height:1.15;
+    white-space:nowrap;
+  }
+  body[data-page="index.html"] .home-first-screen .stats .stat span{
+    margin-top:3px;
+    font-size:clamp(.58rem,2.45vw,.65rem);
+    line-height:1.15;
+    white-space:nowrap;
+  }
+
+  body[data-page="index.html"] .mctb-ai{
+    right:8px;
+    bottom:calc(env(safe-area-inset-bottom) + var(--mobile-edge-gap) + var(--mobile-stats-height) + 6px);
+  }
+  body[data-page="index.html"] .mctb-ai-launcher{
+    min-height:42px;
+    padding:5px 11px 5px 5px;
+    gap:7px;
+    font-size:.66rem;
+  }
+  body[data-page="index.html"] .mctb-ai-launcher-icon{width:32px;height:32px}
+  body[data-page="index.html"] .mctb-ai-panel{
+    bottom:50px;
+    width:calc(100vw - 16px);
+    max-height:calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 180px);
+  }
+}
+
+/* Logo transparent sans capsule visible */
+.site-header .brand,
+.site-footer .brand{
+  border:0;
+  background:transparent;
+  box-shadow:none;
+}
+.site-header .brand-logo,
+.site-footer .brand-logo{
+  filter:none;
+  mix-blend-mode:normal;
+}
+
+@media(max-width:680px){
+  .site-footer .brand{
+    padding:0;
+    background:transparent;
+    box-shadow:none;
+  }
+}
