@@ -12,7 +12,7 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&amp;family=Roboto:wght@400;500;700&amp;display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css?v=logo-couleurs-v8">
+  <link rel="stylesheet" href="assets/css/style.css?v=header-white-video-v10">
 </head>
 
 <body data-page="index.html">
@@ -21,10 +21,15 @@
     <div class="home-first-screen">
     <section class="hero home-hero">
       <div class="hero-slides" aria-hidden="true">
-        <img class="hero-media is-active" src="assets/images/hero-construction-immeuble-v2.webp" alt=""
-          fetchpriority="high">
-        <img class="hero-media" src="assets/images/hero-facade-verre-v2.webp" alt="" decoding="async">
-        <img class="hero-media" src="assets/images/hero-energie-renouvelable-v2.webp" alt="" decoding="async">
+        <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+          poster="assets/images/hero-construction-immeuble-v2.webp" tabindex="-1">
+          <source src="assets/videos/mctb-hero-construction-renovation-mobile-v1.webm" type="video/webm"
+            media="(max-width: 680px)">
+          <source src="assets/videos/mctb-hero-construction-renovation-mobile-v1.mp4" type="video/mp4"
+            media="(max-width: 680px)">
+          <source src="assets/videos/mctb-hero-construction-renovation-v1.webm" type="video/webm">
+          <source src="assets/videos/mctb-hero-construction-renovation-v1.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="container hero-content reveal">
 
@@ -193,7 +198,7 @@
     </section>
   </main>
   <div data-footer=""></div>
-  <script src="assets/js/app.js?v=logo-officiel-v5"></script>
+  <script src="assets/js/app.js?v=hero-video-v9"></script>
 </body>
 
 </html>

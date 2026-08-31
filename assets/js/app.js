@@ -96,7 +96,13 @@ const observer=new IntersectionObserver(items=>items.forEach(x=>x.isIntersecting
 document.querySelector('#contact-form')?.addEventListener('submit',e=>{e.preventDefault();const m=document.querySelector('.form-message');m.textContent='Merci, votre demande a bien été prise en compte. Nous vous recontacterons rapidement.';e.target.reset()});
 document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.classList.remove('active'));b.classList.add('active');const f=b.dataset.filter;document.querySelectorAll('.project-card').forEach(c=>c.style.display=(f==='all'||c.dataset.cat===f)?'block':'none')}));
 const heroSlides=[...document.querySelectorAll('.home-hero .hero-media')];
-if(heroSlides.length>1&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+const heroVideo=document.querySelector('.home-hero .hero-video');
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(heroVideo&&reduceMotion){
+  heroVideo.pause();
+  heroVideo.removeAttribute('autoplay');
+}
+if(heroSlides.length>1&&!reduceMotion){
   let activeSlide=0;
   setInterval(()=>{
     heroSlides[activeSlide].classList.remove('is-active');
